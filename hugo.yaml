@@ -1,0 +1,36 @@
+baseURL: http://localhost:1313/
+languageCode: en-us
+title: ROCK8 NextGen Sites
+theme: rock8
+
+# Site parameters
+params:
+  description: "Building next-generation websites for modern enterprises with ROCK8 NextGen Sites."
+
+# Menu
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 10
+    - name: Services
+      url: /#services
+      weight: 20
+    - name: Process
+      url: /#process
+      weight: 30
+    - name: Examples
+      url: /#examples
+      weight: 40
+    - name: Testimonials
+      url: /#testimonials
+      weight: 50
+    - name: Pricing
+      url: /pricing/
+      weight: 60
+    - name: About
+      url: /about/
+      weight: 70
+    - name: Contact
+      url: /contact/
+      weight: 80

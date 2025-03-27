@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Categories | ROCK8 NextGen Sites</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="menu-overlay"></div>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="/" class="site-logo">
+                <img src="/images/rock8NGSLogo2.png" alt="ROCK8 NextGen Sites">
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    
+                    
+                    <li>
+                        <a href="/" class="">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/#services" class="">
+                            Services
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/#process" class="">
+                            Process
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/#examples" class="">
+                            Examples
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/#testimonials" class="">
+                            Testimonials
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/pricing/" class="">
+                            Pricing
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/" class="">
+                            About
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/contact/" class="">
+                            Contact
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+  <h1>Categories</h1>
+  
+  
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 ROCK8 NextGen Sites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let header = document.querySelector('.site-header');
+        let lastScrollTop = 0;
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        
+        menuOverlay.addEventListener('click', function() {
+            mobileMenuBtn.classList.remove('active');
+            mainNav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+        
+        
+        document.querySelectorAll('.main-nav a').forEach(item => {
+            item.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            
+            
+            lastScrollTop = scrollTop;
+        });
+
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+                
+                const headerHeight = header.offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20; 
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        
+        if (window.location.hash) {
+            const targetId = window.location.hash;
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                
+                setTimeout(function() {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 300);
+            }
+        }
+    });
+    </script>
+</body>
+</html>
