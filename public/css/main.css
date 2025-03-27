@@ -88,9 +88,10 @@ main {
 }
 
 .site-logo img {
-  height: 90px;
+  height: 95px;
   width: auto;
   filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+  object-fit: contain;
 }
 
 /* Mobile menu button */
@@ -1258,7 +1259,7 @@ main {
 }
 
 .site-header.scrolled .site-logo img {
-  height: 70px;
+  height: 75px;
 }
 
 @media (max-width: 768px) {
@@ -1272,7 +1273,7 @@ main {
   }
   
   .site-logo img {
-    height: 70px;
+    height: 75px;
   }
   
   /* Show mobile menu button */
